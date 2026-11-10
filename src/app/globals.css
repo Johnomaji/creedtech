@@ -1,26 +1,313 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
+/* `dark:` utilities follow the resolved theme set on <html data-theme>. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ==========================================================================
+   BRAND TOKENS
+   Swap these to rebrand. Everything else (light + dark palettes, buttons,
+   focus rings, CTA bands) is derived from them.
+   ========================================================================== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-navy: oklch(0.21 0.065 266); /* deep navy: ink + dark surfaces */
+  --brand-indigo: oklch(0.47 0.2 274); /* primary: actions + links */
+  --brand-indigo-soft: oklch(0.76 0.12 276); /* primary on dark surfaces */
+  --brand-accent: oklch(0.89 0.19 126); /* vivid accent (lime) */
+  --brand-accent-ink: oklch(0.22 0.065 266); /* text placed on the accent */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ==========================================================================
+   SEMANTIC TOKENS — light (default)
+   ========================================================================== */
+:root {
+  color-scheme: light;
+
+  --background: oklch(0.985 0.004 266);
+  --foreground: oklch(0.21 0.04 266);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+  --primary: var(--brand-indigo);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.955 0.01 270);
+  --secondary-foreground: oklch(0.25 0.05 266);
+  --muted: oklch(0.96 0.008 270);
+  --muted-foreground: oklch(0.48 0.03 266);
+  --accent: oklch(0.955 0.012 272);
+  --accent-foreground: oklch(0.25 0.05 266);
+  --destructive: oklch(0.55 0.22 27);
+  --border: oklch(0.91 0.01 268);
+  --input: oklch(0.87 0.014 268);
+  --ring: oklch(0.55 0.2 274);
+  --radius: 0.75rem;
+
+  --brand: var(--brand-indigo);
+  --brand-subtle: oklch(0.95 0.03 274);
+  --inverse: var(--brand-navy);
+  --inverse-foreground: oklch(0.97 0.01 266);
+  --grid-line: oklch(0.21 0.04 266 / 0.07);
+  --success: oklch(0.52 0.14 155);
+  --warning: oklch(0.55 0.13 70);
+
+  --chart-1: var(--brand-indigo);
+  --chart-2: var(--brand-accent);
+  --chart-3: oklch(0.65 0.12 180);
+  --chart-4: oklch(0.7 0.17 55);
+  --chart-5: oklch(0.62 0.2 350);
+}
+
+/* ==========================================================================
+   SEMANTIC TOKENS — dark
+   The inline theme script in layout.tsx always sets <html data-theme> before
+   first paint, so the first block is what visitors normally get. The second
+   block is a no-JavaScript fallback that follows the OS setting.
+   Keep the two blocks in sync.
+   ========================================================================== */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: oklch(0.155 0.03 266);
+  --foreground: oklch(0.965 0.008 266);
+  --card: oklch(0.19 0.035 266);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.2 0.035 266);
+  --popover-foreground: var(--foreground);
+  --primary: var(--brand-indigo-soft);
+  --primary-foreground: oklch(0.18 0.05 266);
+  --secondary: oklch(0.24 0.035 266);
+  --secondary-foreground: oklch(0.96 0.01 266);
+  --muted: oklch(0.22 0.03 266);
+  --muted-foreground: oklch(0.73 0.025 266);
+  --accent: oklch(0.26 0.04 268);
+  --accent-foreground: oklch(0.96 0.01 266);
+  --destructive: oklch(0.7 0.19 22);
+  --border: oklch(1 0 0 / 0.1);
+  --input: oklch(1 0 0 / 0.16);
+  --ring: var(--brand-indigo-soft);
+
+  --brand: var(--brand-indigo-soft);
+  --brand-subtle: oklch(0.25 0.06 274);
+  --inverse: oklch(0.22 0.07 270);
+  --inverse-foreground: oklch(0.97 0.01 266);
+  --grid-line: oklch(1 0 0 / 0.06);
+  --success: oklch(0.78 0.15 155);
+  --warning: oklch(0.82 0.13 80);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme]) {
+    color-scheme: dark;
+
+    --background: oklch(0.155 0.03 266);
+    --foreground: oklch(0.965 0.008 266);
+    --card: oklch(0.19 0.035 266);
+    --card-foreground: var(--foreground);
+    --popover: oklch(0.2 0.035 266);
+    --popover-foreground: var(--foreground);
+    --primary: var(--brand-indigo-soft);
+    --primary-foreground: oklch(0.18 0.05 266);
+    --secondary: oklch(0.24 0.035 266);
+    --secondary-foreground: oklch(0.96 0.01 266);
+    --muted: oklch(0.22 0.03 266);
+    --muted-foreground: oklch(0.73 0.025 266);
+    --accent: oklch(0.26 0.04 268);
+    --accent-foreground: oklch(0.96 0.01 266);
+    --destructive: oklch(0.7 0.19 22);
+    --border: oklch(1 0 0 / 0.1);
+    --input: oklch(1 0 0 / 0.16);
+    --ring: var(--brand-indigo-soft);
+
+    --brand: var(--brand-indigo-soft);
+    --brand-subtle: oklch(0.25 0.06 274);
+    --inverse: oklch(0.22 0.07 270);
+    --inverse-foreground: oklch(0.97 0.01 266);
+    --grid-line: oklch(1 0 0 / 0.06);
+    --success: oklch(0.78 0.15 155);
+    --warning: oklch(0.82 0.13 80);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ==========================================================================
+   TAILWIND THEME
+   ========================================================================== */
+@theme inline {
+  --font-sans:
+    var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --font-mono:
+    var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+  --font-display: var(--font-mona-sans), var(--font-geist-sans), sans-serif;
+  --font-heading: var(--font-display);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-brand: var(--brand);
+  --color-brand-subtle: var(--brand-subtle);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-foreground: var(--brand-accent-ink);
+  --color-navy: var(--brand-navy);
+  --color-inverse: var(--inverse);
+  --color-inverse-foreground: var(--inverse-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-delayed: float 7s ease-in-out 1.5s infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth font-sans;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--brand-accent);
+    color: var(--brand-accent-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  /* Anchored sections clear the sticky header. */
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
+  /* Kill colour transitions for one frame while switching themes. */
+  [data-theme-switching] *,
+  [data-theme-switching] *::before,
+  [data-theme-switching] *::after {
+    transition: none !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   UTILITIES
+   ========================================================================== */
+
+/* Hairline grid used behind heroes and CTA bands. */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Fades a background out from the top centre. */
+@utility fade-mask-top {
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 0%,
+    black 30%,
+    transparent 75%
+  );
+}
+
+/* Scroll-driven reveal: zero JavaScript, progressive enhancement only. */
+@utility reveal {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
