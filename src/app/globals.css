@@ -183,19 +183,6 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-
-  --animate-float: float 7s ease-in-out infinite;
-  --animate-float-delayed: float 7s ease-in-out 1.5s infinite;
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
-  }
 }
 
 /* ==========================================================================
@@ -208,6 +195,8 @@
 
   html {
     @apply scroll-smooth font-sans;
+    /* Keeps in-page anchors clear of the floating header. */
+    scroll-padding-top: var(--header-height);
     -webkit-tap-highlight-color: transparent;
     text-rendering: optimizeLegibility;
   }
@@ -270,8 +259,24 @@
 }
 
 /* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+
+/* Space taken by the floating header: top gap (0.75rem) + bar (3.5rem). */
+:root {
+  --header-height: 4.25rem;
+}
+
+/* ==========================================================================
    UTILITIES
    ========================================================================== */
+
+/* For a page's first section: its background runs up behind the floating
+   header while its content stays below it. */
+@utility under-header {
+  margin-top: calc(var(--header-height) * -1);
+  padding-top: var(--header-height);
+}
 
 /* Hairline grid used behind heroes and CTA bands. */
 @utility bg-grid {

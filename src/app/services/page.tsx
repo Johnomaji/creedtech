@@ -67,15 +67,9 @@ export default function ServicesPage() {
           >
             <Container className="grid gap-10 lg:grid-cols-2 lg:gap-20">
               <div className={cn(index % 2 === 1 && "lg:order-2")}>
-                <div className="flex items-center gap-4">
-                  <span className="grid size-12 place-items-center rounded-xl bg-brand-subtle text-brand">
-                    <ServiceIcon name={service.icon} className="size-5" />
-                  </span>
-                  <span className="font-mono text-sm font-medium text-muted-foreground">
-                    {String(index + 1).padStart(2, "0")} /{" "}
-                    {String(services.length).padStart(2, "0")}
-                  </span>
-                </div>
+                <span className="grid size-12 place-items-center rounded-xl bg-brand-subtle text-brand">
+                  <ServiceIcon name={service.icon} className="size-5" />
+                </span>
                 <h2
                   id={`${service.slug}-title`}
                   className="mt-6 text-3xl leading-tight font-semibold tracking-[-0.03em] sm:text-4xl"

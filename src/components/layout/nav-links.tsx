@@ -20,9 +20,8 @@ export function NavLinks({ items }: { items: NavItem[] }) {
               href={item.href}
               aria-current={active ? "page" : undefined}
               className={cx(
-                "relative rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
-                "aria-[current=page]:text-foreground",
-                "after:absolute after:inset-x-3 after:-bottom-[13px] after:h-0.5 after:rounded-full after:bg-brand after:opacity-0 after:transition-opacity aria-[current=page]:after:opacity-100"
+                "rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
+                "aria-[current=page]:bg-muted aria-[current=page]:text-foreground"
               )}
             >
               {item.label}

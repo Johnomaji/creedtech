@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import { products } from "@/content/products"
 import { Container } from "@/components/layout/container"
+import { Eyebrow } from "@/components/layout/section-heading"
 import { ButtonLink } from "@/components/ui/button-link"
 
 export const metadata: Metadata = {
@@ -22,26 +23,21 @@ export default function NotFound() {
   return (
     <section
       aria-labelledby="not-found-title"
-      className="relative isolate overflow-hidden"
+      className="relative isolate under-header overflow-hidden"
     >
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-grid fade-mask-top"
       />
       <Container className="flex flex-col items-center py-24 text-center sm:py-32">
-        <p
-          aria-hidden="true"
-          className="font-display text-[7rem] leading-none font-bold tracking-[-0.06em] text-transparent [-webkit-text-stroke:2px_var(--border)] sm:text-[10rem]"
-        >
-          404
-        </p>
+        <Eyebrow>Error 404</Eyebrow>
         <h1
           id="not-found-title"
-          className="mt-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl"
+          className="mt-5 text-4xl leading-[1.04] font-bold tracking-[-0.04em] sm:text-5xl"
         >
           This page doesn&apos;t exist
         </h1>
-        <p className="mt-4 max-w-md text-lg text-muted-foreground">
+        <p className="mt-5 max-w-md text-lg text-muted-foreground">
           The link may be broken, or the page may have moved. Here are some
           places to start instead.
         </p>

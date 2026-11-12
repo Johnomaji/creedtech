@@ -21,15 +21,14 @@ export function PageHeader({
   return (
     <section
       aria-labelledby="page-title"
-      className={cn("relative isolate overflow-hidden border-b", className)}
+      className={cn(
+        "relative isolate under-header overflow-hidden border-b",
+        className
+      )}
     >
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-grid fade-mask-top"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 -top-48 -z-10 mx-auto h-112 max-w-4xl bg-[radial-gradient(closest-side,color-mix(in_oklch,var(--brand-indigo),transparent_84%),transparent)]"
       />
       <Container className="pt-16 pb-16 sm:pt-24 sm:pb-20">
         <div className="max-w-3xl">

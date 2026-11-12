@@ -47,15 +47,12 @@ export default function CareersPage() {
             title="What it's like to work here"
           />
           <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {culture.map((point, index) => (
+            {culture.map((point) => (
               <li
                 key={point.title}
                 className="reveal rounded-2xl border bg-card p-6"
               >
-                <span className="font-mono text-sm font-medium text-brand">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-4 text-lg font-semibold tracking-[-0.02em]">
+                <h3 className="text-lg font-semibold tracking-[-0.02em]">
                   {point.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

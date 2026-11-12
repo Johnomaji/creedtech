@@ -60,12 +60,8 @@ export default function TeamPage() {
 
           <section
             aria-labelledby="join-title"
-            className="relative isolate flex flex-col items-start justify-between gap-6 overflow-hidden rounded-3xl bg-inverse p-8 text-inverse-foreground sm:flex-row sm:items-center sm:p-12"
+            className="flex flex-col items-start justify-between gap-6 rounded-3xl bg-inverse p-8 text-inverse-foreground sm:flex-row sm:items-center sm:p-12"
           >
-            <div
-              aria-hidden="true"
-              className="absolute -right-20 -bottom-32 -z-10 size-96 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklch,var(--brand-accent),transparent_60%),transparent)]"
-            />
             <div>
               <h2
                 id="join-title"

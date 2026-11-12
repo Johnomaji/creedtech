@@ -88,12 +88,9 @@ export function MobileNav({
       <div
         id={panelId}
         hidden={!open}
-        className="absolute inset-x-0 top-full border-b bg-background shadow-lg shadow-navy/5"
+        className="absolute inset-x-0 top-full mt-2 max-h-[calc(100dvh-var(--header-height)-1.5rem)] overflow-y-auto rounded-2xl border bg-background shadow-lg shadow-navy/5 dark:shadow-black/25"
       >
-        <nav
-          aria-label="Mobile"
-          className="mx-auto max-w-7xl px-4 pt-2 pb-6 sm:px-6"
-        >
+        <nav aria-label="Mobile" className="px-4 pt-1 pb-4 sm:px-5">
           <ul className="divide-y">
             {items.map((item) => {
               const active = isActivePath(pathname, item.href)

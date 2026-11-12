@@ -40,3 +40,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# full-size team and testimonial photos (cropped copies live in public/team
+# and public/testimonials)
+/assets/team-originals/
+/assets/testimonial-originals/

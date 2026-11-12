@@ -92,11 +92,7 @@ export default function AboutPage() {
       {/* Mission & vision */}
       <section aria-label="Mission and vision" className="pb-20 sm:pb-28">
         <Container className="grid gap-5 lg:grid-cols-2">
-          <div className="relative isolate overflow-hidden rounded-3xl bg-inverse p-8 text-inverse-foreground sm:p-12">
-            <div
-              aria-hidden="true"
-              className="absolute -right-24 -bottom-24 -z-10 size-80 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklch,var(--brand-accent),transparent_60%),transparent)]"
-            />
+          <div className="rounded-3xl bg-inverse p-8 text-inverse-foreground sm:p-12">
             <Target className="size-6 text-brand-accent" aria-hidden="true" />
             <h2 className="mt-6 font-mono text-xs font-medium tracking-[0.16em] text-inverse-foreground/70 uppercase">
               Our mission
@@ -105,11 +101,7 @@ export default function AboutPage() {
               {mission}
             </p>
           </div>
-          <div className="relative isolate overflow-hidden rounded-3xl border bg-card p-8 sm:p-12">
-            <div
-              aria-hidden="true"
-              className="absolute -top-24 -right-24 -z-10 size-80 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklch,var(--brand-indigo),transparent_80%),transparent)]"
-            />
+          <div className="rounded-3xl border bg-card p-8 sm:p-12">
             <Compass className="size-6 text-brand" aria-hidden="true" />
             <h2 className="mt-6 font-mono text-xs font-medium tracking-[0.16em] text-muted-foreground uppercase">
               Our vision
@@ -138,10 +130,7 @@ export default function AboutPage() {
                 key={value.title}
                 className={cn("bg-card p-7", fillLastRow(index, values.length))}
               >
-                <span className="font-mono text-sm font-medium text-brand">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-4 text-lg font-semibold tracking-[-0.02em]">
+                <h3 className="text-lg font-semibold tracking-[-0.02em]">
                   {value.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

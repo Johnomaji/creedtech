@@ -1,27 +1,28 @@
 import type { Testimonial } from "./types"
 
-// TODO: replace with real, approved testimonials before launch.
-// These placeholders exist only so the layout can be reviewed.
 export const testimonials: Testimonial[] = [
   {
     quote:
       "Results used to take us three weeks of spreadsheets at the end of every term. Now teachers enter scores and report cards are ready the same week.",
-    name: "Placeholder Name",
-    role: "Principal",
-    organization: "Partner school",
+    name: "Eje Joseph",
+    role: "CEO",
+    organization: "Ejefarms",
+    avatar: "/testimonials/eje-joseph.jpg",
   },
   {
     quote:
       "Creedtech took the time to understand how our team really works before writing a line of code. The tool they built fits us, not the other way round.",
-    name: "Placeholder Name",
-    role: "Head of Operations",
-    organization: "Client organization",
+    name: "Nonye",
+    role: "Project Manager",
+    organization: "RBM",
+    avatar: "/testimonials/nonye.jpg",
   },
   {
     quote:
       "Handoffs between our writers, editors and designers used to live in group chats. Now everyone knows what's theirs, and nothing gets dropped.",
-    name: "Placeholder Name",
-    role: "Managing Editor",
-    organization: "Media partner",
+    name: "Chineze Eden",
+    role: "Lead",
+    organization: "1270 Consulting",
+    avatar: "/testimonials/chineze-eden.jpg",
   },
 ]

@@ -39,7 +39,8 @@ export function InitialsAvatar({
     return (
       <Image
         src={src}
-        alt={name}
+        // Decorative: every usage prints the name right beside the avatar.
+        alt=""
         width={px}
         height={px}
         className={cn("shrink-0 rounded-full object-cover", box, className)}

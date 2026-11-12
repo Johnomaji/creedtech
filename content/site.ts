@@ -2,17 +2,17 @@
  * Company-wide settings: name, URLs, contact details and navigation.
  */
 
-// TODO: confirm the production domain (or set NEXT_PUBLIC_SITE_URL).
-// On Vercel, falls back to the project's production domain (its custom
-// domain once one is added, otherwise the *.vercel.app one), so canonical
-// URLs and Open Graph images never point at a domain the site isn't on.
+// NEXT_PUBLIC_SITE_URL wins when set. On Vercel, falls back to the project's
+// production domain (its custom domain once one is added, otherwise the
+// *.vercel.app one), so canonical URLs and Open Graph images never point at
+// a domain the site isn't on.
 const vercelProductionUrl =
   process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ||
   (vercelProductionUrl
     ? `https://${vercelProductionUrl}`
-    : "https://creedtech.com")
+    : "https://creedtech.com.ng")
 ).replace(/\/$/, "")
 
 export const site = {
@@ -22,8 +22,8 @@ export const site = {
   title: "Creedtech: software that organizations run on",
   description:
     "Creedtech builds SaaS products and custom software for schools, health providers and growing businesses, from first workshop to long-term support.",
-  email: "hello@creedtech.com", // TODO: confirm contact inbox
-  careersEmail: "careers@creedtech.com", // TODO: confirm careers inbox
+  email: "creedit.2024@gmail.com",
+  careersEmail: "creedit.2024@gmail.com",
   founder: {
     name: "Web Johnny",
     role: "Founder & CEO",

@@ -30,12 +30,12 @@ pnpm dev                     # http://localhost:3000
 Set these in `.env.local` for local development and in **Vercel → Project →
 Settings → Environment Variables** for production.
 
-| Variable               | Required         | Purpose                                                                                                                                                                                        |
-| ---------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | Recommended      | Public URL, no trailing slash, e.g. `https://creedtech.com`. Used for canonical URLs, the sitemap, Open Graph images and JSON-LD. On Vercel it defaults to the project's production domain.    |
-| `RESEND_API_KEY`       | Yes (production) | [Resend](https://resend.com/api-keys) API key for the contact form.                                                                                                                            |
-| `CONTACT_TO_EMAIL`     | Yes (production) | Inbox that receives contact form submissions.                                                                                                                                                  |
-| `CONTACT_FROM_EMAIL`   | Recommended      | Sender, e.g. `Creedtech Website <website@creedtech.com>`. Must be on a domain verified in Resend. Defaults to Resend's test sender, which can only deliver to your own Resend account address. |
+| Variable               | Required         | Purpose                                                                                                                                                                                           |
+| ---------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL` | Recommended      | Public URL, no trailing slash, e.g. `https://creedtech.com.ng`. Used for canonical URLs, the sitemap, Open Graph images and JSON-LD. On Vercel it defaults to the project's production domain.    |
+| `RESEND_API_KEY`       | Yes (production) | [Resend](https://resend.com/api-keys) API key for the contact form.                                                                                                                               |
+| `CONTACT_TO_EMAIL`     | Yes (production) | Inbox that receives contact form submissions.                                                                                                                                                     |
+| `CONTACT_FROM_EMAIL`   | Recommended      | Sender, e.g. `Creedtech Website <website@creedtech.com.ng>`. Must be on a domain verified in Resend. Defaults to Resend's test sender, which can only deliver to your own Resend account address. |
 
 **Contact form behaviour without email configured:** in development,
 submissions are validated and printed to the terminal, and the visitor sees

@@ -18,16 +18,17 @@ export const team: TeamMember[] = [
     role: "Founder & CEO",
     group: "leadership",
     bio: "Web Johnny is a self-taught software engineer with an M.Sc. in Software Engineering. In 2018 he founded Creed Academy, which has taught coding to children ever since, and he now leads Creedtech's products and client work.",
-    // TODO: add photo, e.g. photo: "/team/web-johnny.jpg"
+    photo: "/team/web-johnny.jpg",
     links: {
       // TODO: add Web Johnny's profile URLs
     },
   },
   {
-    name: "Ochai", // TODO: add surname
+    name: "Ochai Ginger",
     role: "Senior Full-stack Engineer",
     group: "engineering",
     bio: "Ochai builds Creedtech's web and mobile software end to end, from database to interface, across our own products and client projects.",
+    photo: "/team/ochai-ginger.jpg",
     links: {
       // TODO: add Ochai's profile URLs
     },
@@ -37,15 +38,17 @@ export const team: TeamMember[] = [
     role: "Design Advisor",
     group: "design",
     bio: "Rashida advises Creedtech on design, guiding how our products look, feel and work so they stay clear and accessible for the people who use them.",
+    photo: "/team/rashida-abdul-rashid.jpg",
     links: {
       // TODO: add Rashida's profile URLs
     },
   },
   {
-    name: "Chelsea", // TODO: add surname
+    name: "Chelsea Ekpunobi",
     role: "Operations Manager",
     group: "operations",
     bio: "Chelsea co-founded our health platform for neurodivergent families. As Operations Manager she keeps Creedtech's projects, people and partners running smoothly.",
+    photo: "/team/chelsea-ekpunobi.jpg",
     links: {
       // TODO: add Chelsea's profile URLs
     },

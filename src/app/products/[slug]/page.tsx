@@ -99,7 +99,7 @@ export default async function ProductPage({
       {/* Hero */}
       <section
         aria-labelledby="page-title"
-        className="relative isolate overflow-hidden border-b"
+        className="relative isolate under-header overflow-hidden border-b"
       >
         <div
           aria-hidden="true"
@@ -107,7 +107,7 @@ export default async function ProductPage({
         />
         <div
           aria-hidden="true"
-          className="absolute -top-48 right-0 -z-10 size-160 bg-[radial-gradient(closest-side,color-mix(in_oklch,var(--product-accent),transparent_82%),transparent)]"
+          className="absolute -top-32 right-0 -z-10 size-160 bg-[radial-gradient(closest-side,color-mix(in_oklch,var(--product-accent),transparent_82%),transparent)]"
         />
 
         <Container className="grid grid-cols-1 items-center gap-14 pt-10 pb-16 sm:pb-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:pt-14">

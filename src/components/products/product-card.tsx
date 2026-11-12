@@ -23,18 +23,12 @@ export function ProductCard({
     <article
       style={{ "--product-accent": product.accentColor } as CSSProperties}
       className={cn(
-        "group relative isolate flex flex-col overflow-hidden rounded-2xl border bg-card p-6 transition duration-300 sm:p-7",
+        "group relative flex flex-col rounded-2xl border bg-card p-6 transition duration-300 sm:p-7",
         "hover:-translate-y-0.5 hover:border-[color-mix(in_oklch,var(--product-accent),transparent_55%)] hover:shadow-[0_24px_48px_-24px_color-mix(in_oklch,var(--product-accent),transparent_55%)]",
         "has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-ring has-[a:focus-visible]:ring-offset-2 has-[a:focus-visible]:ring-offset-background",
         className
       )}
     >
-      {/* Accent glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-24 -right-24 -z-10 size-64 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklch,var(--product-accent),transparent_78%),transparent)] opacity-70 transition-opacity duration-500 group-hover:opacity-100"
-      />
-
       <div className="flex items-start justify-between gap-4">
         <ProductMark product={product} />
         <StatusBadge status={product.status} />

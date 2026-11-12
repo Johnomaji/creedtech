@@ -35,19 +35,14 @@ export function ServicesOverview() {
         </div>
 
         <ul className="grid gap-4 sm:grid-cols-2">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <li
               key={service.slug}
               className="group relative flex reveal flex-col rounded-2xl border bg-card p-6 transition-colors hover:border-brand/35 has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-ring"
             >
-              <div className="flex items-center justify-between">
-                <span className="grid size-11 place-items-center rounded-xl bg-brand-subtle text-brand">
-                  <ServiceIcon name={service.icon} className="size-5" />
-                </span>
-                <span className="font-mono text-xs text-muted-foreground">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-              </div>
+              <span className="grid size-11 place-items-center rounded-xl bg-brand-subtle text-brand">
+                <ServiceIcon name={service.icon} className="size-5" />
+              </span>
               <h3 className="mt-6 text-lg font-semibold tracking-[-0.02em]">
                 <Link
                   href={`/services#${service.slug}`}
@@ -63,12 +58,8 @@ export function ServicesOverview() {
           ))}
 
           {/* Sixth tile: a nudge for people who aren't sure what they need. */}
-          <li className="relative flex reveal flex-col justify-between overflow-hidden rounded-2xl bg-inverse p-6 text-inverse-foreground">
-            <div
-              aria-hidden="true"
-              className="absolute -right-10 -bottom-16 size-48 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklch,var(--brand-accent),transparent_50%),transparent)]"
-            />
-            <div className="relative">
+          <li className="flex reveal flex-col justify-between rounded-2xl bg-inverse p-6 text-inverse-foreground">
+            <div>
               <h3 className="text-lg font-semibold tracking-[-0.02em]">
                 Not sure where to start?
               </h3>
@@ -79,7 +70,7 @@ export function ServicesOverview() {
             </div>
             <Link
               href="/contact?interest=custom-project"
-              className="relative mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-accent underline-offset-4 hover:underline"
+              className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-accent underline-offset-4 hover:underline"
             >
               Book a discovery call
               <ArrowUpRight className="size-4" aria-hidden="true" />
